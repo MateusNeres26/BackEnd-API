@@ -6,7 +6,7 @@ const supertest = require('supertest');
 
 module.exports = {
     post: (payload) => {
-        return supertest(global.base.url).post('/v2/login').send(payload)
+        return supertest(global.base.url).post('/v2/usuarios').send(payload)
         .set('Content-Type', 'application/json')
     }
 }

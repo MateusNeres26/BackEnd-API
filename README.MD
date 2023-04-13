@@ -20,6 +20,8 @@ Projeto foi criado com o objetivo de padronização a criação de testes de API
 - ```npm run test:hml:integration```
 - Gerando novo relatório do Allure Report:
 - ```npm run allure-generate```
+- Executando HTML do Allure:
+- ```npx allure open```
 
 
 ## Tutorial de construção/organição de código.

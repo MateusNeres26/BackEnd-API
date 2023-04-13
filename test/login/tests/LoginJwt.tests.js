@@ -1,30 +1,26 @@
 'use strict'
 const loginJwt = require('../requests/LoginJwt.requests.js');
+const loginPayload = require('../payloads/loginFilter.payloads');
 
 
-describe('Login - API JULIO', () => {
 
-it('Deve realizar login com sucesso - @wip', async () => {
 
-    const payload = {
-        usuarioLogin: 'Mateus',
-        usuarioSenha: '123456'
-      };
-      const response = await loginJwt.post(payload);
-      chai.expect(response.statusCode).to.equal(200);
-    });
+describe('Efetuar Login - API JULIO', () => {
 
-it('Deve retornar Unauthorized ao falhar no login - @wip', async () => {
+  it('Deve realizar login com sucesso - @wip', async () => {
 
-      const payload = {
-          usuarioLogin: 'Mateus',
-          usuarioSenha: '1234567'
-        };
-        const response = await loginJwt.post(payload);
-        chai.expect(response.statusCode).to.equal(401);
-      });
+    const response = await loginJwt.post(loginPayload.login('Mateus', '123456'));
+    chai.expect(response.statusCode).to.equal(200);
+  });
 
-  })
+  it('Deve retornar Unauthorized ao falhar o login - @wip', async () => {
+
+      const response = await loginJwt.post(loginPayload.login('Mateus', '1234567'));
+      chai.expect(response.statusCode).to.equal(401);
+  });
+
+
+})
 
 
 
